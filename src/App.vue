@@ -1,18 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <h1>wellcome</h1>
+      {{message}}
+      <p>{{message}}</p>
+      <p>{{run('javascript')}}</p>
+      <p>{{foo('dkjkjk')}}</p>
+      <p>{{ok ? 'yes' : 'no'}}</p>
+      <p>{{status ? 'condition true' : 'condition false'}}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  
+  },
+  data (){
+    return {
+      message:'vue js',
+      ok:false,
+      status:true
+
+    }
+  },
+  methods:{
+    run:function(data){
+      return 'wellcome to '+ data;
+    },
+    foo:function(key){
+      return key;
+
+    }
   }
+
 }
 </script>
 
