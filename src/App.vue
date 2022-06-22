@@ -7,6 +7,11 @@
       <p>{{foo('dkjkjk')}}</p>
       <p>{{ok ? 'yes' : 'no'}}</p>
       <p>{{status ? 'condition true' : 'condition false'}}</p>
+      <p>{{developer()}}</p>
+      <p>Full Name of client {{fullName()}}</p>
+      <h3>{{day('morning')}}</h3>
+      <h3>{{day('evening')}}</h3>
+      <h3>{{day('afternoone')}}</h3>
   </div>
 </template>
 
@@ -23,7 +28,11 @@ export default {
     return {
       message:'vue js',
       ok:false,
-      status:true
+      status:true,
+      name:'jon william son',
+      field:'frontend developer',
+      firstName:'steve',
+      lastName:'smith'
 
     }
   },
@@ -34,6 +43,15 @@ export default {
     foo:function(key){
       return key;
 
+    },
+    developer:function(){
+      return this.name + this.field;
+    },
+    fullName:function(){
+      return this.firstName + this.lastName;
+    },
+    day(val){
+      return 'good ' + val;
     }
   }
 
