@@ -2,22 +2,11 @@
   <div id="app">
       <h1>wellcome</h1>
       {{message}}
-      <p>{{message}}</p>
-      <p>{{run('javascript')}}</p>
-      <p>{{foo('dkjkjk')}}</p>
-      <p>{{ok ? 'yes' : 'no'}}</p>
-      <p>{{status ? 'condition true' : 'condition false'}}</p>
-      <p>{{developer()}}</p>
-      <p>Full Name of client {{fullName()}}</p>
-      <h3>{{day('morning')}}</h3>
-      <h3>{{day('evening')}}</h3>
-      <h3>{{day('afternoone')}}</h3>
+        <h2>branch 1</h2>
   </div>
 </template>
 
 <script>
-
-
 
 export default {
   name: 'App',
