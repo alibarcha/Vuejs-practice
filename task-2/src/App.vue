@@ -1,8 +1,36 @@
 <template>
   <div id="app">
-     <h2>second branch</h2>
-   
+     <h2>two way data binding</h2>
+     <!-- <input type="text" v-model.lazy="data"> -->
+     <!-- <input type="text" v-model.trim="data"> -->
 
+     <form >
+        <input type="text" placeholder="Enter Name" v-model.lazy="name" > <br>
+        <input type="email" placeholder="Enter Email" v-model="email" ><br>
+        <input type="password" placeholder="Password" v-model="password" > <br>
+        <!-- <button  @click="submitForm" type="button">Sign Up</button> -->
+        <input type="submit" value="submit">
+     </form>
+     <p>{{name}}</p>
+     <p>{{email}}</p>
+     <p>{{password}}</p>
+
+     <br><br>
+     <input type="text" v-model.lazy="fname" placeholder="Enter first name">
+     <input type="text" v-model.lazy="lname" placeholder="Enter last name">
+
+     <p>User Name: {{fullname}}</p>
+     <br><hr>
+
+        <p>Convert meter to centimeter</p>
+     <input type="number" v-model="number" placeholder="Enter meter number">
+     <h3>Centimeter : {{convertCentimeter}}</h3>
+
+     <p>Marks of Student</p>
+     <input type="number" v-model="cNum" placeholder="Enter Computer Marks"><br>
+     <input type="number" v-model="eNum" placeholder="Enter English Marks"><br>
+     <input type="number" v-model="sNum" placeholder="Enter Science Marks"><br>
+     <h3>Total Marks Of Student : {{totalMarks}}</h3>
 
   </div>
 </template>
@@ -16,76 +44,37 @@ export default {
   },
   data (){
     return {
-      count:0,
-      name:'vue js',
-      userName:'',
-      x:0,
-      y:0,
-      alpha:''
- 
-   
+      name:'',
+      email:'',
+      password:'',
+      fname:'',
+      lname:'',
+      number:'',
+      cNum:null,
+      eNum:null,
+      sNum:null,
     }
+ 
   },
   methods:{
-    add:function(){
-      this.count++
+   
+  },
+  computed:{
+    fullname:function(){
+      return this.fname +" "+ this.lname
     },
-    sub:function(){
-      this.count--
+    convertCentimeter:function(){
+      return this.number*100;
+
     },
-    greet:function(event){
-      alert(`Hello ${this.name}`)
-      if(event){
-        alert(event.target.tagName)
-      }
-    
-    },
+    totalMarks:function(){
+      // var tot= this.cNum+this.eNum+this.sNum
+      //  return tot
+       return parseInt(this.cNum) + parseInt(this.eNum) + parseInt(this.sNum)
 
-    sayhi(hello){
-     return hello
-    },
-    alert:function(){
-      alert('alert called')
-    },
-
-    signup:function(){
-     let num= prompt("Enter Your Name")
-     this.userName=num
-    },
-      mouseFun:function(event){
-        // console.log(event)
-        this.x=event.offsetX
-        this.y=event.offsetY
-       
-      },
-      mouseover:function(){
-        alert("mouse over event called")
-        document.body.style.background="#eee"
-      },
-      mouseout:function(){
-        document.body.style="background:#222  "
-      },
-
-      keypress:function(event){
-          console.log(event.key)
-        // confirm("Enter Your Full Name :)")
-        this.alpha=event.key
-       
-      },
-      con:function(){
-        console.log("event fired")
-      },
-      parent:function(){
-        console.log("parent event ")
-      },
-
-      child:function(){
-        console.log("child event")
-      }
-
-
- 
+    }
   }
+
 
 }
 </script>
