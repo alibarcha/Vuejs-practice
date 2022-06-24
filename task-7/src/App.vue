@@ -3,7 +3,7 @@
     
       <!-- components props data pass -->
       <header-app name="william son"></header-app>
-      <content-area traner="The Net Ninja"></content-area>
+      <content-area traner="The Net Ninja" v-bind:para="title" v-bind:Allcourses="courses"></content-area>
       <footer-app v-bind:title="foo"></footer-app>
 
   </div>
@@ -22,7 +22,17 @@ export default {
   },
   data() {
     return {
-      foo:'! 2022 good :)'
+      foo:'! 2022 good :)',
+      title:'props is used for to transfer data parent component to child ',
+
+         courses:[
+                {name:'wordpress  development',url:'https://v2.vuejs.org/'},
+                {name:'web development',url:'https://v2.vuejs.org/'},
+                {name:'vue js  development',url:'https://v2.vuejs.org/'},
+                {name:'React development',url:'https://v2.vuejs.org/'},
+                {name:'Make Api development',url:'https://v2.vuejs.org/'},
+            ]
+
     };
   },
 
