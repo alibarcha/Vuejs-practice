@@ -1,43 +1,47 @@
 <template>
   <div id="app">
-    
-      <student-app>
-        <h2 slot="head">Form Heading slot</h2>
-          <div slot="form-header">
-            <h3>student form</h3>
-          </div>
-          <div slot="form-element">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
-          </div>
-          <div slot="form-button">
-            <button v-button.mediambtn>Login</button>
-          </div>
-          <div slot="form-footer">
-            <h3>Form footer</h3>
-          </div>
-        
-      </student-app>
-    
+
+   <!-- <employ-app></employ-app> --> 
+   <!-- dynamic component handle -->
+
+    <keep-alive>
+         <components v-bind:is="component"> </components>
+    </keep-alive>
+ 
+
+    <br><br>
+
+     <button v-on:click="component = 'student-app'">Student Data</button>
+     <button v-on:click="component='employ-app'">Employ Data</button>
+
+     <br><br><hr><hr><br><br>
+
+     <data-app></data-app>
+
+ 
   </div>                                                                                                  
 </template>
 
 <script>
 
 import Students from './components/Students.vue'
+import Employ from './components/Employ.vue'
 
+import Data from './components/Data.vue'
 
 
 export default {
   name: "App",
   components: {
     'student-app':Students,
+    'employ-app':Employ,
+    'data-app':Data,
 
   
   },
   data() {
     return {
+      component:"student-app"
    
     };
   },
