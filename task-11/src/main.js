@@ -40,8 +40,6 @@ Vue.directive('button', (el, binding, vnode) => {
 // ************************* global import components in vue  ***************************
 
 Vue.config.productionTip = false
-// -----------------Event bus instance-----------
-export const EventBus = new Vue();
 
 
 new Vue({
