@@ -2,14 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 
 
-
 // custom directives
 // ----------buttons modifiers --------------
 
 Vue.directive('button', (el, binding, vnode) => {
   el.style.background = "lightgreen"
-
-
 
   console.log("buttons", binding)
   // small btn
@@ -38,18 +35,14 @@ Vue.directive('button', (el, binding, vnode) => {
     el.style.border = "none"
   }
 
-
-
-
 })
-
 
 // ************************* global import components in vue  ***************************
 
-
-
-
 Vue.config.productionTip = false
+// -----------------Event bus instance-----------
+export const EventBus = new Vue();
+
 
 new Vue({
   render: h => h(App),
