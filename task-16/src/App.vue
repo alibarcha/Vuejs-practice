@@ -30,7 +30,7 @@
     </form>
     <br /><br /><br />
     <div id="preview">
-      <h4>Title: {{ userData.title }}</h4>
+      <h4 >Title: {{ userData.title }}</h4>
       <h4>Body: {{ userData.body }}</h4>
       <h4>User id: {{ userData.UserId }}</h4>
     </div>

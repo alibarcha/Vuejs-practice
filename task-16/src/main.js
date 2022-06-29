@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 // import vue resourse and use
 import VueResourse from 'vue-resource'
+
 Vue.use(VueResourse)
 
 
@@ -38,6 +39,51 @@ Vue.directive('button', (el, binding, vnode) => {
     el.style.border = "none"
   }
 
+})
+
+// new custom dirctive
+
+Vue.directive('format',{
+  bind(el,binding,vnode) {
+    // el.style.color="lightgreen"
+    if(binding.modifiers.lightgreen==true){
+      el.style.color="lightgreen"
+    }
+
+    if(binding.modifiers.gray==true){
+      el.style.color="gray"
+    }
+  }
+});
+
+Vue.directive('gray',{
+  bind(el,binding,vnode){
+    el.style.background="gray"
+  }
+})
+
+Vue.directive('heading',{
+  bind(el,binding,vnode){
+    // el.style.color="red"
+    // modifier
+    if(binding.modifiers.red==true){
+      el.style.color="red"
+    }
+    // values
+    if(binding.value=='underline'){
+      el.style.textDecoration="underline"
+      
+    }
+
+    // arguments
+
+    if(binding.arg=='super'){
+      el.style.fontSize="30px"
+      el.style.color="#222"
+    }
+    
+    
+  }
 })
 
 // ************************* global import components in vue  ***************************

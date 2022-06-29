@@ -4,7 +4,7 @@
                 <!-- {{showDatas}} -->
             <table border="1" cellspacing="0">
                 <thead>
-                    <tr>
+                    <tr v-format>
                         <th>ID</th>
                         <th>Title</th>
                         <th>Body</th>
@@ -12,18 +12,18 @@
                 </thead>
                 <tbody>
                     <tr v-for="item in showDatas" v-bind:key="item.id">
-                        <td>{{item.id}}</td>
+                        <td v-gray>{{item.id}}</td>
                         <td>{{item.title}}</td>
                         <td>{{item.body}}</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h2>Shows Blogs In Text</h2>
+            <h2 v-heading:super="'underline'">Shows Blogs In Text</h2>
 
             <div id="blogDiv" v-for="(item,index) in showDatas" v-bind:key="item.id">
-                <h3 >{{index}} : {{item.title}}</h3>
-                <p >{{item.body}}</p>
+                <h3 v-format.lightgreen>{{index}} : {{item.title}}</h3>
+                <p v-format.gray>{{item.body}}</p>
             </div>
             
     </div>
