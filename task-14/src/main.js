@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+// import vue resourse and use
+import VueResourse from 'vue-resource'
+Vue.use(VueResourse)
 
 
 // custom directives
