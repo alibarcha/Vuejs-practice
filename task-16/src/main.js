@@ -88,6 +88,24 @@ Vue.directive('heading',{
 
 // ************************* global import components in vue  ***************************
 
+// ---- Global filters in vue js ------
+
+// Vue.filter('upper',function(value){
+//   return value.toUpperCase()
+// })
+
+
+//-------------- maxins in vue -----------
+// Vue.mixin({
+//   filters:{
+//     upper:function(value){
+//        return value.toUpperCase()
+//     }
+//   }
+
+// })
+
+
 Vue.config.productionTip = false
 
 

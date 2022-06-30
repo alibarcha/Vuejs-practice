@@ -1,6 +1,8 @@
 <template>
     <div id="blog">
-            <h2>show Blogs from Rest Api</h2><br>
+            <h2>show Blogs from Rest Api  </h2><br>
+            <p >{{title | upper }}</p>
+            <a v-bind:href="url" v-bind:title="urlTitle | upper">go to google.com</a>
                 <!-- {{showDatas}} -->
             <table border="1" cellspacing="0">
                 <thead>
@@ -14,7 +16,7 @@
                     <tr v-for="item in showDatas" v-bind:key="item.id">
                         <td v-gray>{{item.id}}</td>
                         <td>{{item.title}}</td>
-                        <td>{{item.body}}</td>
+                        <td>{{item.body | snip}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -23,17 +25,25 @@
 
             <div id="blogDiv" v-for="(item,index) in showDatas" v-bind:key="item.id">
                 <h3 v-format.lightgreen>{{index}} : {{item.title}}</h3>
-                <p v-format.gray>{{item.body}}</p>
+                <p v-format.gray>{{item.body | snip}}</p>
             </div>
             
     </div>
 </template>
 
 <script>
+// import mixins file
+import filtersmixins from '../mixins/filters'
 export default {
+    mixins:[
+        filtersmixins
+    ],
     name:'ShowBlogs',
     data(){
         return {
+            title:'this paragraphy from Apis ',
+            urlTitle:'go to google.com',
+            url:'http://google.com',
             showDatas:[]
         }
     },
@@ -43,7 +53,15 @@ export default {
             console.log(data)
         });
 
-    }
+    },
+    // filters:{
+    //     upperCase:function(val){
+    //         return val.toUppercase();
+    //     },
+    //     snip:function(val){
+    //         return val.slice(0,80)+ "...";
+    //     }
+    // }
 }
 </script>
 
